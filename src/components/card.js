@@ -10,7 +10,7 @@ const Card = ({ pokemonNumber, pokemonName, pokemonImage, pokemonType }) => {
         <a className='cardName'>{pokemonName}</a>
         <img className='cardImage' src={pokemonImage}></img>
         <div className='buttonList'>
-          {pokemonType.map((elem, i) => <CardType cardType={elem} />)}
+          {pokemonType.map((elem, i) => <CardType key={i} cardType={elem} />)}
         </div>
       </div>
     </div>

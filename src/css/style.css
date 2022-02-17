@@ -22,10 +22,14 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
+  min-height: 300px;
+  min-width: 15%;
   height: 300px;
-  width: 300px;
+  width: 15%;
   border-radius: 10px;
   background-color: white;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 
 .cardContent {
@@ -58,6 +62,9 @@
 .buttonList {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
   margin: 50px 10px 10px 30px;
 }
 
