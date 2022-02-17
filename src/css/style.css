@@ -18,6 +18,48 @@
   font-size: 30px;
 }
 
-.App {
-  background-color: wheat;
+.card {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  width: 300px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardContent > a {
+  font-size: 30px;
+}
+
+.buttonType {
+  height: 30px;
+  width: 100px;
+  margin-right: 10px;
+  border-radius: 10px;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.cardImage {
+  max-height: 150px;
+  max-width: 150px;
+}
+
+.buttonList {
+  display: flex;
+  flex-direction: row;
+  margin: 50px 10px 10px 30px;
+}
+
+.buttonType > a {
 }
