@@ -1,0 +1,23 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.header > img {
+  position: relative;
+  width: 340px;
+  height: 80px;
+  left: 20px;
+}
+
+.header > a {
+  position: relative;
+  right: 20px;
+  position: absolute;
+  color: white;
+  font-size: 30px;
+}
+
+.App {
+  background-color: wheat;
+}
