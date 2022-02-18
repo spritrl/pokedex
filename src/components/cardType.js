@@ -5,7 +5,6 @@ const CardType = (cardType) => {
   const [buttonColor, setButtonColor] = useState(0);
 
   useEffect(() => {
-    console.log(cardType.cardType)
     getButtonColor(cardType.cardType);
   });
 
@@ -33,6 +32,7 @@ const CardType = (cardType) => {
         setButtonColor('rgb(169 183 64)');
         break;
       default:
+        setButtonColor('gray');
         break;
     }
   };
@@ -42,9 +42,7 @@ const CardType = (cardType) => {
       <div className="buttonType" style={{
         backgroundColor: buttonColor,
       }}>
-        <a style={{
-          margin: 'auto'
-        }}>{cardType.cardType}</a>
+        <a>{cardType.cardType}</a>
       </div>
     </>
   )

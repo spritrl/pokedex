@@ -23,13 +23,18 @@
   display: flex;
   flex-direction: column;
   min-height: 300px;
-  min-width: 15%;
+  min-width: 200px;
   height: 300px;
-  width: 15%;
+  width: 14%;
   border-radius: 10px;
   background-color: white;
   margin-right: 20px;
   margin-bottom: 20px;
+}
+
+.cardNumber {
+  display: flex;
+  justify-content:flex-start;
 }
 
 .cardContent {
@@ -44,14 +49,30 @@
 }
 
 .buttonType {
+  display: flex;
   height: 30px;
   width: 100px;
   margin-right: 10px;
+  margin-bottom: 10px;
   border-radius: 10px;
   justify-content: center;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.buttonType > a {
+  
+}
+
+.listButtonType {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 50px 10px 10px 30px;
 }
 
 .cardImage {
@@ -59,14 +80,12 @@
   max-width: 150px;
 }
 
-.buttonList {
+.cardList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   text-align: center;
+  justify-content: center;
   margin: 50px 10px 10px 30px;
-}
-
-.buttonType > a {
 }
