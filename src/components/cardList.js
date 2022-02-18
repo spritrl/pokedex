@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import '../css/style.css';
 import Card from './card';
 import axios from 'axios';
+import { TextField, Box } from '@material-ui/core'
 
 const CardList = () => {
   let pokemonFinalList = [];
   const [listPokemon, setListPokemon] = useState([]);
+  const [textFieldValue, setTextFielValue] = useState('');
 
   const pokemon = {
     id: 0,
@@ -16,7 +18,6 @@ const CardList = () => {
 
   useEffect(() => {
     getPokemon();
-    console.log('pokemonFinalListclijiojp', pokemonFinalList);
   }, []);
 
   const getPokemon = async () => {
@@ -59,17 +60,36 @@ const CardList = () => {
   }
 
   return (
-    <div className='cardList'>
-      {
-        listPokemon.map((element, i) =>
-          <Card
-            pokemonNumber={element.id}
-            pokemonName={element.name}
-            pokemonImage={element.img}
-            pokemonType={element.types} />
-        )
-      }
-    </div>
+    <>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        textAlign: 'center',
+        justifyContent: 'center',
+      }}>
+        <TextField
+          placeholder='Search a Pokemon'
+          className='searchoxTextField'
+          value={textFieldValue}
+          onChange={(e) => setTextFielValue(e.target.value)}
+        />
+      </div>
+      <div className='cardList'>
+        {
+          listPokemon.map((element, i) => {
+            if (element.name.includes(textFieldValue)) {
+              return <Card
+                key={element.id}
+                pokemonNumber={element.id}
+                pokemonName={element.name}
+                pokemonImage={element.img}
+                pokemonType={element.types} />
+            }
+          }
+          )
+        }
+      </div>
+    </>
   )
 };
 export default CardList;
