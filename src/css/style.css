@@ -90,8 +90,14 @@
   margin: 50px 10px 10px 30px;
 }
 
-.searchoxTextField {
+.searchBarContent {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.searchBarTextField {
   width: 90%;
   background-color: rgba(63, 63, 63, 0.459);
-  border: 1px 1px 1px 1px solid black;
 }

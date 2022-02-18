@@ -61,22 +61,17 @@ const CardList = () => {
 
   return (
     <>
-      <div style={{
-        display: 'flex',
-        alignItems: 'center',
-        textAlign: 'center',
-        justifyContent: 'center',
-      }}>
+      <div className="searchBarContent">
         <TextField
           placeholder='Search a Pokemon'
-          className='searchoxTextField'
+          className='searchBarTextField'
           value={textFieldValue}
           onChange={(e) => setTextFielValue(e.target.value)}
         />
       </div>
       <div className='cardList'>
         {
-          listPokemon.map((element, i) => {
+          listPokemon.map((element) => {
             if (element.name.includes(textFieldValue)) {
               return <Card
                 key={element.id}
