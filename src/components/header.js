@@ -1,41 +1,48 @@
 import * as React from 'react';
-import '../css/style.css';
-import logo from '../img/logo.svg';
 import { useNavigate } from 'react-router-dom';
-import Box from '@mui/material/Box';
-import InputLabel from '@mui/material/InputLabel';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
+import { Select } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core'
+import logo from '../img/logo.svg';
+
+const useStyles = makeStyles({
+  header: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  headerImage: {
+    position: 'relative',
+    width: 340,
+    height: 80,
+    left: 20,
+  },
+  dropdown: {
+    marginLeft: 'auto',
+    marginRight: 10,
+  }
+});
 
 const Header = () => {
-  const [language, setLanguage] = React.useState('');
+  const classes = useStyles()
+  const [language, setLanguage] = React.useState('fr');
   const navigate = useNavigate();
-
   const handleChange = (event) => {
     setLanguage(event.target.value);
   };
 
-  /*
-    <FormControl className='dropdown'>
-      <InputLabel class='inputLabel'>Age</InputLabel>
+  return (
+    <div className={classes.header}>
+      <img className={classes.headerImage} src={logo} onClick={() => navigate('/')} />
       <Select
-        labelId="demo-simple-select-label"
-        id="demo-simple-select"
+        className={classes.dropdown}
+        native
+        variant="outlined"
         value={language}
-        label="Age"
         onChange={handleChange}
       >
-        <MenuItem value={10}>FR</MenuItem>
-        <MenuItem value={20}>EN</MenuItem>
+        <option key='fr' value={'fr'}>fr</option>
+        <option key='en' value={'en'}>en</option>
       </Select>
-    </FormControl>
-  */
-
-  return (
-    <div className='header'>
-      <img src={logo} onClick={() => navigate('/')} />
-      <a>LanguageSection component</a>
     </div>
   )
 };
