@@ -11,93 +11,20 @@
 }
 
 .header > a {
-  position: relative;
   right: 20px;
   position: absolute;
   color: white;
   font-size: 30px;
 }
 
-.card {
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  min-height: 300px;
-  min-width: 200px;
-  height: 300px;
-  width: 14%;
-  border-radius: 10px;
-  background-color: white;
-  margin-right: 20px;
-  margin-bottom: 20px;
+.dropdown {
+  height: 5%;
+  width: 10%;
+  right: 20px;
+  position: absolute;
 }
 
-.cardNumber {
-  display: flex;
-  justify-content:flex-start;
-}
-
-.cardContent {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.cardContent > a {
-  font-size: 30px;
-}
-
-.buttonType {
-  display: flex;
-  height: 30px;
-  width: 80px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  border-radius: 10px;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.buttonType > a {
-  
-}
-
-.listButtonType {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin: 50px 10px 10px 30px;
-}
-
-.cardImage {
-  max-height: 150px;
-  max-width: 150px;
-}
-
-.cardList {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin: 50px 10px 10px 30px;
-}
-
-.searchBarContent {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-}
-
-.searchBarTextField {
-  width: 90%;
-  background-color: rgba(63, 63, 63, 0.459);
+.dropdown > .inputLabel {
+font-size: 40px;
+background-color: red;
 }
