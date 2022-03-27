@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core'
+import { Select } from '@material-ui/core';
 import CardType from './cardType';
 
 const useStyles = makeStyles({
@@ -44,12 +45,22 @@ const useStyles = makeStyles({
     justifyContent: 'center',
     margin: '50px 10px 10px 30px',
   },
+  size: {
+    fontSize: 15,
+    margin: '0px 4px 0px 4px',
+  },
+  sizeList: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginBottom: 10,
+  },
 })
 
 
-const Card = ({ pokemonNumber, pokemonName, pokemonImage, pokemonType }) => {
+const Card = ({ pokemonNumber, pokemonName, pokemonImage, pokemonType, height, weight, moves }) => {
   const navigate = useNavigate();
-  const classes = useStyles()
+  const classes = useStyles();
+  const [movesSetted, setMovesSetted] = React.useState(moves > 0 ? moves[0] : '');
 
   return (
     <div className={classes.card} onClick={() => navigate(`/pokemon/${pokemonNumber}`)}>
@@ -60,6 +71,29 @@ const Card = ({ pokemonNumber, pokemonName, pokemonImage, pokemonType }) => {
         <div className={classes.listButtonType}>
           {pokemonType.map((elem, i) => <CardType key={i} cardType={elem} />)}
         </div>
+
+        {height && weight && (
+          <div className={classes.sizeList}>
+            <a className={classes.size}>{height * 10} cm</a>
+            <a className={classes.size}>-</a>
+            <a className={classes.size}>{weight / 10} kg</a>
+          </div>
+        )}
+        {moves && (
+          <Select
+            native
+            variant="outlined"
+            value={movesSetted}
+            multiple={false}
+            onChange={e => setMovesSetted(e.target.value)}
+          >
+            {moves.map((pokemonMove, index) => (
+              <option key={index} name={index}>
+                {pokemonMove.move.name}
+              </option>
+            ))}
+          </Select>
+        )}
       </div>
     </div>
   )
